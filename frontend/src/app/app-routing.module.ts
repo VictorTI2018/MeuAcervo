@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './views/home/home.component'
 import { AutorComponent } from './views/autor/autor.component';
 import { AutorCreateComponent } from './views/autor/autor-create/autor-create.component';
+import { EditoraComponent } from './views/editora/editora.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -12,7 +13,8 @@ const routes: Routes = [
     path: 'autors', component: AutorComponent
   },
   { path: 'autor-create', component: AutorCreateComponent },
-  { path: 'autor-edit', component: AutorCreateComponent }
+  { path: 'autor-edit', component: AutorCreateComponent },
+  { path: 'editoras', component: EditoraComponent }
 ];
 
 @NgModule({

@@ -14,3 +14,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 body {
     overflow: hidden;
 }
+
+i.edit {
+    color: orange;
+}
+
+i.delete {
+    color: red;
+}

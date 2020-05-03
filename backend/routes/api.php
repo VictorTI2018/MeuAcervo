@@ -17,12 +17,16 @@ $router->get('/', function () use ($router) {
 
 $router->group(["prefix" => "api"], function () use ($router) {
 
-    $router->group(["prefix" => "autor", "namespace" => "Autor"], function() use ($router) {
+    $router->group(["prefix" => "autor", "namespace" => "Autor"], function () use ($router) {
         $router->get('/', 'AutorController@index');
         $router->get('/{id}', 'AutorController@getById');
         $router->post('/register', 'AutorController@create');
         $router->put('/edit/{id}', 'AutorController@update');
         $router->delete('/remove/{id}', 'AutorController@delete');
+    });
+
+    $router->group(["prefix" => "editora", "namespace" => "Editora"], function () use ($router) {
+        $router->get('/', 'EditoraController@index');
     });
 
     $router->group(["prefix" => "livro", "namespace" => "Livro"], function () use ($router) {

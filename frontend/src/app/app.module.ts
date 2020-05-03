@@ -25,6 +25,9 @@ import { HomeComponent } from './views/home/home.component';
 import { AutorComponent } from './views/autor/autor.component';
 import { AutorCreateComponent } from './views/autor/autor-create/autor-create.component';
 import { AutorAllComponent } from './views/autor/autor-all/autor-all.component';
+import { EditoraComponent } from './views/editora/editora.component';
+import { EditoraAllComponent } from './views/editora/editora-all/editora-all.component';
+import { EditoraCreateComponent } from './views/editora/editora-create/editora-create.component';
 
 
 
@@ -37,7 +40,10 @@ import { AutorAllComponent } from './views/autor/autor-all/autor-all.component';
     HomeComponent,
     AutorComponent,
     AutorCreateComponent,
-    AutorAllComponent
+    AutorAllComponent,
+    EditoraComponent,
+    EditoraAllComponent,
+    EditoraCreateComponent
   ],
   imports: [
     BrowserModule,
