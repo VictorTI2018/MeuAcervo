@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule} from '@angular/material/input'
+import { MatTableModule } from '@angular/material/table'
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +24,7 @@ import { NavegationComponent } from './components/template/navegation/navegation
 import { HomeComponent } from './views/home/home.component';
 import { AutorComponent } from './views/autor/autor.component';
 import { AutorCreateComponent } from './views/autor/autor-create/autor-create.component';
+import { AutorAllComponent } from './views/autor/autor-all/autor-all.component';
 
 
 
@@ -34,7 +36,8 @@ import { AutorCreateComponent } from './views/autor/autor-create/autor-create.co
     NavegationComponent,
     HomeComponent,
     AutorComponent,
-    AutorCreateComponent
+    AutorCreateComponent,
+    AutorAllComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ import { AutorCreateComponent } from './views/autor/autor-create/autor-create.co
     MatButtonModule,
     MatSnackBarModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

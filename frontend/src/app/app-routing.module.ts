@@ -11,7 +11,8 @@ const routes: Routes = [
   {
     path: 'autors', component: AutorComponent
   },
-  { path: 'autor-create', component: AutorCreateComponent }
+  { path: 'autor-create', component: AutorCreateComponent },
+  { path: 'autor-edit', component: AutorCreateComponent }
 ];
 
 @NgModule({

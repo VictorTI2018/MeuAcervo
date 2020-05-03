@@ -25,6 +25,12 @@ class AutorController extends Controller
         return response()->json($this->autoRepository->getAll());
     }
 
+    public function getById(int $id): JsonResponse
+    {
+        return response()
+            ->json($this->autoRepository->findById($id));
+    }
+
     /**
      * Cadastrar um novo autor
      *

@@ -17,7 +17,7 @@ export class AutorService {
     private httpClient: HttpClient
   ) { }
 
-  showMessage(msg: string):void {
+  showMessage(msg: string): void {
     this.snackBar.open(msg, 'X', {
       duration: 3000,
       horizontalPosition: "center",
@@ -25,7 +25,15 @@ export class AutorService {
     })
   }
 
-  insert(autor:Autor) {
+  get() {
+    return this.httpClient.get(`${API_URL}/autor`).toPromise()
+  }
+
+  find(id: number) {
+    return this.httpClient.get(`${API_URL}/autor/${id}`).toPromise()
+  }
+
+  insert(autor: Autor) {
     return this.httpClient.post(`${API_URL}/autor/register`, autor).toPromise()
   }
 }
