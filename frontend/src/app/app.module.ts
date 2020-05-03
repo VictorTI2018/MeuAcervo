@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule} from '@angular/material/input'
+import { MatSelectModule} from '@angular/material/select'
 import { MatTableModule } from '@angular/material/table'
 
 
@@ -28,6 +29,9 @@ import { AutorAllComponent } from './views/autor/autor-all/autor-all.component';
 import { EditoraComponent } from './views/editora/editora.component';
 import { EditoraAllComponent } from './views/editora/editora-all/editora-all.component';
 import { EditoraCreateComponent } from './views/editora/editora-create/editora-create.component';
+import { LivroAllComponent } from './views/livro/livro-all/livro-all.component';
+import { LivroComponent } from './views/livro/livro.component';
+import { LivroCreateComponent } from './views/livro/livro-create/livro-create.component';
 
 
 
@@ -43,7 +47,10 @@ import { EditoraCreateComponent } from './views/editora/editora-create/editora-c
     AutorAllComponent,
     EditoraComponent,
     EditoraAllComponent,
-    EditoraCreateComponent
+    EditoraCreateComponent,
+    LivroAllComponent,
+    LivroComponent,
+    LivroCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +66,8 @@ import { EditoraCreateComponent } from './views/editora/editora-create/editora-c
     MatSnackBarModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

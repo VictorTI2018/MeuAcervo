@@ -25,6 +25,16 @@ class LivroController extends Controller
     }
 
     /**
+     * Buscar todos os livros
+     *
+     * @return JsonResponse
+     */
+    public function index(): JsonResponse
+    {
+        return response()->json($this->livroRepository->getAll());
+    }
+
+    /**
      * Cadastrar um novo livro
      *
      * @param Request $request

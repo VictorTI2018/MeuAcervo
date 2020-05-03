@@ -30,6 +30,7 @@ $router->group(["prefix" => "api"], function () use ($router) {
     });
 
     $router->group(["prefix" => "livro", "namespace" => "Livro"], function () use ($router) {
+        $router->get('/', 'LivroController@index');
         $router->post('/register', 'LivroController@create');
     });
 });

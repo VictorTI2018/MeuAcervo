@@ -1,0 +1,29 @@
+<mat-card>
+    <mat-card-title>Novo Autor</mat-card-title>
+    <form [formGroup]="livroForm">
+        <mat-form-field>
+            <input matInput placeholder="Nome..." required formControlName="nome">
+        </mat-form-field>
+        <mat-form-field>
+            <textarea matInput placeholder="Descricao..." required formControlName="descricao"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+            <input placeholder="dd/mm/YYYY" matInput required formControlName="data_pub">
+        </mat-form-field>
+        <div class="row">
+            <mat-form-field>
+                <mat-select formControlName="autor_id">
+                    <mat-option *ngFor="let item of autores" [value]="item.id">{{ item.nome }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-select formControlName="editora_id">
+                    <mat-option *ngFor="let item of editoras" [value]="item.id">{{ item.nome }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+    </form>
+    <button mat-raised-button (click)="handleSubmit()" color="primary">Salvar</button>
+    <button mat-raised-button>Cancelar</button>
+</mat-card>

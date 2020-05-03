@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms'
 
 import { AutorService } from 'src/app/services/autor/autor.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { MessageService } from 'src/app/services/message/message.service';
 
 @Component({
   selector: 'app-autor-create',
@@ -17,7 +18,8 @@ export class AutorCreateComponent implements OnInit {
     private autorService: AutorService,
     private formBuilder: FormBuilder,
     private router: Router,
-    private activedRouter: ActivatedRoute
+    private activedRouter: ActivatedRoute,
+    private message: MessageService
   ) { }
 
   ngOnInit(): void {
@@ -41,14 +43,14 @@ export class AutorCreateComponent implements OnInit {
       res.then((r: any) => {
         if (r.status) {
           let message = `${model.id ? 'Atualizado com sucesso...' : 'Cadastrado com sucesso...'}`
-          this.autorService.showMessage(message)
+          this.message.showMessage(message)
           setTimeout(() => {
             this.router.navigate(['/autors'])
           }, 500)
         }
       })
     } else {
-      this.autorService.showMessage("Por favor preencha todos os campos")
+      this.message.showMessage("Por favor preencha todos os campos")
     }
   }
 
