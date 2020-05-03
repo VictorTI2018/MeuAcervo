@@ -28,6 +28,7 @@ export class LivroCreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.livroForm = this.formBuiler.group({
+      id: [0],
       nome: [''],
       data_pub: [''],
       descricao: [''],
@@ -36,6 +37,25 @@ export class LivroCreateComponent implements OnInit {
     })
     this.getEditora()
     this.getAutores()
+  }
+
+  handleSubmit() {
+    if (this.livroForm.valid) {
+      const model = Object.assign(this.livroForm.value)
+      let res;
+      if (!model.id) {
+        res = this.livroService.insert(model)
+      }
+      res.then((res: any) => {
+        let message = `${model.id ? 'Atualizado com sucesso...' : 'Cadastrado com sucesso'}`
+        if (res.status) {
+          this.message.showMessage(message)
+          this.route.navigate(['/livros'])
+        }
+      })
+    } else {
+      this.message.showMessage("Por favor preencha todos os campos...")
+    }
   }
 
   getEditora() {
