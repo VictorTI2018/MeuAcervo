@@ -7,6 +7,11 @@ use App\Entity\Editora;
 class EditoraRepository
 {
 
+    /**
+     * Buscar todas as editoras
+     *
+     * @return object
+     */
     public function getAll(): object
     {
         return (new Editora())

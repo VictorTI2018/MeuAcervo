@@ -8,7 +8,7 @@ class Livro extends Model {
 
     protected $table = 'livros';
 
-    protected $filable = [
+    protected $fillable = [
         'nome', 'data_pub', 'descricao', 'editora_id', 'autor_id'
     ];
 
