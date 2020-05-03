@@ -7,4 +7,4 @@ services:
             - "3307:3306"
         environment: 
             - MYSQL_ROOT_PASSWORD=admin
-            - MUSQL_DATABASE=meu_acervo
+            - MYSQL_DATABASE=meu_acervo

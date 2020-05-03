@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Entity;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
