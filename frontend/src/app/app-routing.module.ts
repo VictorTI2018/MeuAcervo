@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   {
-    path: 'autor', component: AutorComponent
+    path: 'autors', component: AutorComponent
   },
   { path: 'autor-create', component: AutorCreateComponent }
 ];

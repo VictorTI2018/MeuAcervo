@@ -20,6 +20,17 @@ class AutorController extends Controller
         $this->autoRepository = $autorRepository;
     }
 
+    public function index(): JsonResponse
+    {
+        return response()->json($this->autoRepository->getAll());
+    }
+
+    /**
+     * Cadastrar um novo autor
+     *
+     * @param Request $request
+     * @return JsonResponse
+     */
     public function create(Request $request): JsonResponse
     {
         $validator = Validator::make($request->all(), [

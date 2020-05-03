@@ -1,1 +1,14 @@
-<p>autor-create works!</p>
+<mat-card>
+    <mat-card-title>Novo Autor</mat-card-title>
+    <form [formGroup]="autorForm">
+        <mat-form-field>
+            <input matInput placeholder="Nome..." required formControlName="nome">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Sorenome..." required formControlName="sobrenome">
+        </mat-form-field>
+
+    </form>
+    <button mat-raised-button (click)="save()" color="primary">Salvar</button>
+    <button mat-raised-button>Cancelar</button>
+</mat-card>

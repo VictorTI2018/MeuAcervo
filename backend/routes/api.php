@@ -18,6 +18,7 @@ $router->get('/', function () use ($router) {
 $router->group(["prefix" => "api"], function () use ($router) {
 
     $router->group(["prefix" => "autor", "namespace" => "Autor"], function() use ($router) {
+        $router->post('/', 'AutorController@index');
         $router->post('/register', 'AutorController@create');
     });
 

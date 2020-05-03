@@ -4,7 +4,15 @@ namespace App\Repository;
 
 use App\Entity\Autor;
 
-class AutorRepository {
+class AutorRepository
+{
+
+    public function getAll(): object
+    {
+        return (new Autor())
+            ->query()
+            ->get();
+    }
 
     /**
      * Inserir um novo autor no banco
@@ -12,7 +20,7 @@ class AutorRepository {
      * @param array $params
      * @return boolean
      */
-    public function insert(array $params):bool
+    public function insert(array $params): bool
     {
         return (new Autor())
             ->fill($params)
