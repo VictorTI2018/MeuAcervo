@@ -15,4 +15,8 @@ export class LivroService {
     return this.httpClient.get(`${API_URL}/livro`).toPromise()
   }
 
+  insert(params: object) {
+    return this.httpClient.post(`${API_URL}/livro/register`, params).toPromise()
+  }
+
 }
