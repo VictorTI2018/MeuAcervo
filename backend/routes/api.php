@@ -21,6 +21,8 @@ $router->group(["prefix" => "api"], function () use ($router) {
         $router->get('/', 'AutorController@index');
         $router->get('/{id}', 'AutorController@getById');
         $router->post('/register', 'AutorController@create');
+        $router->put('/edit/{id}', 'AutorController@update');
+        $router->delete('/remove/{id}', 'AutorController@delete');
     });
 
     $router->group(["prefix" => "livro", "namespace" => "Livro"], function () use ($router) {

@@ -36,4 +36,12 @@ export class AutorService {
   insert(autor: Autor) {
     return this.httpClient.post(`${API_URL}/autor/register`, autor).toPromise()
   }
+
+  edit(id: number, autor: Autor) {
+    return this.httpClient.put(`${API_URL}/autor/edit/${id}`, autor).toPromise()
+  }
+
+  remove(id:number) {
+    return this.httpClient.delete(`${API_URL}/autor/remove/${id}`).toPromise()
+  }
 }

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AutorService } from 'src/app/services/autor/autor.service';
 import { Router } from '@angular/router';
+import { MatTable } from '@angular/material/table';
 
 @Component({
   selector: 'app-autor-all',
@@ -9,8 +10,8 @@ import { Router } from '@angular/router';
 })
 export class AutorAllComponent implements OnInit {
 
+  @ViewChild(MatTable) table: MatTable<any>
   autores = []
-
   displayedColumns = ['id', 'nome', 'sobrenome', 'action']
 
   constructor(
@@ -33,5 +34,18 @@ export class AutorAllComponent implements OnInit {
 
   editarAutor(id: number) {
     this.router.navigate(["/autor-create"], { queryParams: { id: id } })
+  }
+
+  removeAutor(id: number) {
+    if (confirm("Deseja apagar este autor?")) {
+      this.autorService.remove(id)
+        .then((res: any) => {
+          if (res.status) {
+            this.getAutores()
+          }
+        }).catch(error => {
+          console.log(error)
+        })
+    }
   }
 }

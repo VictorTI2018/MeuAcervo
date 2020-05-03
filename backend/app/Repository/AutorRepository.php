@@ -45,4 +45,32 @@ class AutorRepository
             ->fill($params)
             ->save();
     }
+    /**
+     * Atualizar um autor do banco
+     *
+     * @param integer $id
+     * @param array $params
+     * @return boolean
+     */
+    public function edit(int $id, array $params): bool
+    {
+        return (new Autor())
+            ->query()
+            ->where("id", $id)
+            ->update($params);
+    }
+
+    /**
+     * Remover um autor do banco
+     *
+     * @param integer $id
+     * @return boolean
+     */
+    public function remove(int $id): bool
+    {
+        return (new Autor())
+            ->query()
+            ->where("id", $id)
+            ->delete();
+    }
 }

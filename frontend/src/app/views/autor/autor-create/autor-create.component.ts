@@ -29,26 +29,35 @@ export class AutorCreateComponent implements OnInit {
     this.getQueryParams()
   }
 
-  save(): void {
+  handleSubmit() {
     if (this.autorForm.valid) {
-      let model = Object.assign(this.autorForm.value)
-      this.autorService.insert(model)
-        .then((res: any) => {
-          if (res.status === true) {
-            this.autorService.showMessage("Cadastrado com sucesso...")
+      let res;
+      const model = Object.assign(this.autorForm.value)
+      if (model.id) {
+        res = this.autorService.edit(model.id, model)
+      }  else {
+        res = this.autorService.insert(model)
+      }
+      res.then((r: any) => {
+        if (r.status) {
+          let message = `${model.id ? 'Atualizado com sucesso...' : 'Cadastrado com sucesso...'}`
+          this.autorService.showMessage(message)
+          setTimeout(() => {
             this.router.navigate(['/autors'])
-          }
-        })
+          }, 500)
+        }
+      })
     } else {
       this.autorService.showMessage("Por favor preencha todos os campos")
     }
   }
 
+
   getQueryParams() {
-    this.autorForm.get('id').setValue(this.activedRouter.snapshot.queryParamMap.get('id'))
-    if (this.autorForm.get('id').value > 0) {
-      let id_autor = this.autorForm.get('id').value
-      this.autorService.find(id_autor)
+    let id = Number(this.activedRouter.snapshot.queryParamMap.get('id'))
+    if (id > 0) {
+      this.autorForm.get('id').setValue(id)
+      this.autorService.find(id)
         .then((res: any) => {
           this.autorForm.get('nome').setValue(res.nome)
           this.autorForm.get('sobrenome').setValue(res.sobrenome)
